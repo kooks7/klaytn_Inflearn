@@ -1,0 +1,70 @@
+db.member.save({MEMBER_NO:10001,MEMBER_NAME:"신영찬",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10002,MEMBER_NAME:"김신",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10003,MEMBER_NAME:"김민재",RANK:1,DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10004,MEMBER_NAME:"최재성",DEPT:"HR",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10005,MEMBER_NAME:"윤영욱",DEPT:"HR",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10006,MEMBER_NAME:"김도림",DEPT:"HR",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10007,MEMBER_NAME:"손흥민",RANK:1,DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10008,MEMBER_NAME:"문재인",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10009,MEMBER_NAME:"이명박",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10010,MEMBER_NAME:"박근혜",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10011,MEMBER_NAME:"노무현",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10012,MEMBER_NAME:"김대중",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10013,MEMBER_NAME:"공효은",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10014,MEMBER_NAME:"윤영찬",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10015,MEMBER_NAME:"신도림",DEPT:"Block1",PASSWORD:"aaa"})
+db.member.save({MEMBER_NO:10016,MEMBER_NAME:"민재성",DEPT:"Block1",PASSWORD:"aaa"})
+
+
+
+
+
+peer chaincode install -n medicalreport -v 1.0 -l node -p /opt/gopath/src/github.com/SmartHC_cc/
+peer chaincode instantiate -n medicalreport -v 1.0 -l node -C mychannel -c'{"Args":[]}'
+
+medical_BC_Service.attendReportInsert("10001", "1570674446222", "0");
+medical_BC_Service.attendReportInsert("10001", "1570674456222", "1");
+medical_BC_Service.attendReportInsert("10001", "1570674543222", "0");
+medical_BC_Service.attendReportInsert("10001", "1570675543222", "1");
+medical_BC_Service.attendReportInsert("10003", "1570675643222", "0");
+medical_BC_Service.attendReportInsert("10003", "1570675843222", "1");
+medical_BC_Service.attendReportInsert("10003", "1570686653333", "0");
+medical_BC_Service.attendReportInsert("10003", "1570953865132", "1");
+
+db.Enterance.find({ $or: [{MEMBER_NO:10001},{MEMBER_NO:10002},{MEMBER_NO:10003}]})
+
+
+
+db.temp.save({MEMBER_NO:10001,STATUS:0})
+db.temp.save({MEMBER_NO:10002,STATUS:0})
+db.temp.save({MEMBER_NO:10003,STATUS:0})
+db.temp.save({MEMBER_NO:10004,STATUS:0})
+db.temp.save({MEMBER_NO:10005,STATUS:0})
+
+db.Enterance.save({MEMBER_NO:10001,timestamp:1570674446222,status:0})
+db.Enterance.save({MEMBER_NO:10001,timestamp:1570674445302,status:1})
+db.Enterance.save({MEMBER_NO:10002,timestamp:1570674447222,status:0})
+db.Enterance.save({MEMBER_NO:10001,timestamp:1570674456302,status:0})
+db.Enterance.save({MEMBER_NO:10001,timestamp:1570674466302,status:1})
+db.Enterance.save({MEMBER_NO:10002,timestamp:1570674466302,status:1})
+db.Enterance.save({MEMBER_NO:10003,timestamp:1570677456302,status:0})
+db.Enterance.save({MEMBER_NO:10003,timestamp:1570677546302,status:1})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570677547302,status:0})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570682646302,status:1})
+
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570682656302,status:0})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570682746302,status:1})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570683746302,status:0})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570685646302,status:1})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570686646302,status:0})
+db.Enterance.save({MEMBER_NO:10004,timestamp:1570692646302,status:1})
+
+db.Enterance.save({MEMBER_NO:10005,timestamp:0,status:0})
+db.Enterance.save({MEMBER_NO:10005,timestamp:0,status:1})
+
+
+
+
+
+
+
